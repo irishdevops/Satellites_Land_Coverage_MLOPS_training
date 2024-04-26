@@ -1,0 +1,5 @@
+.venv
+datasets/imagenes_entrenamiento
+datasets/coordinates
+datasets/model_logs
+
