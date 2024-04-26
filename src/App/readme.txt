@@ -1,0 +1,1 @@
+- The App script calls a routed model. This variables are used within the same model app.
