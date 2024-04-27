@@ -20,7 +20,7 @@ class EE_Requests:
             'list_success': self.list_success
         }
 
-    ##EE_Gabriel_Request_Copernicus(Correct dataset as variable,Number of rows as number,Number 0 no harmonized/Number 1 harmonized)
+ 
 
     ## collection_name: 'COPERNICUS/S2', 'COPERNICUS/S2_SR_HARMONIZED'.
     # Load Sentinel-2 image collection LINK https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2
