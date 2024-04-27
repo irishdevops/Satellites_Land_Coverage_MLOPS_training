@@ -2,7 +2,7 @@ This repo contains customized functions that allow you to train models based on 
 ### **Instructions**
 1 - clone repo from git
 2 - follow the notebooks orders
-Note: You will need to have an active earth engine account and an active project to connect.
+Note: You will need to have an active earth engine account and an active project to connect. https://earthengine.google.com/
 
 ### **Pending work:**
 
