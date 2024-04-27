@@ -6,8 +6,8 @@ Note: You will need to have an active earth engine account and an active project
 
 ### **Pending work:**
 
-- Automation of the OS for model training notebook. OS has to be manually set up by URL with users on preferred working directories for each of the process outputs (model logs, missclassified samples, model metadata).
-- Better commenting of the functions and explanation on Earth Engine. Following repo is recommended as a complementay source: https://github.com/google/earthengine-api
+- Automation of the OS for model training notebook. OS has to be manually set up by URL by users for each of the process outputs (model logs, missclassified samples, model metadata, stats...).
+- Commenting of the functions and explanation on Earth Engine can be improved. Following repo is recommended as a complementay source: https://github.com/google/earthengine-api
 
 ### **Advantages and unique value:**
 
