@@ -11,4 +11,4 @@ Note: You will need to have an active earth engine account and an active project
 
 ### **Advantages and unique value:**
 
-- Process of data mining + training models just following notebook 1 and notebook 2 instructions is unique to this computer vision experiment. Use the models from tensorflow.
+- Process of data mining + training models just following notebook 1 and notebook 2 instructions is unique to this computer vision experiment. you can choose the pre-trained models from tensorflow and pytorch that have been selected or use your own models.
