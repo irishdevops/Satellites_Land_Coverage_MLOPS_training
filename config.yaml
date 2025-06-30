@@ -1,0 +1,56 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# EARTH-MINER CONFIGURATION
+# Edit ONLY this file before running earth-miner.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# 1. Authentication
+auth:
+  # Absolute path to your GEE service-account JSON key
+  credentials_json: "/full/path/to/your/ee-credentials.json"
+
+# 2. Output settings
+output:
+  # Where to save downloaded images
+  directory: "./data"
+  # File format (e.g. "tif", "png", "jpg")
+  format: "tif"
+
+# 3. Job definitions
+jobs:
+  - name: extract_ndvi              # A unique identifier for this job
+    collection: "MODIS/006/MOD13Q1" # Earth Engine collection ID
+    bands:
+      - NDVI                        # List of bands to download
+    region:
+      lat: 37.7                     # Center latitude
+      lon: -122.4                   # Center longitude
+      buffer_km: 5                  # Radius around the point (in km)
+    date_range:
+      - "2023-01-01"                # Start date (YYYY-MM-DD)
+      - "2023-12-31"                # End date   (YYYY-MM-DD)
+    schedule:
+      type: cron                    # "cron" = recurring, "once" = a single run
+      expr: "0 6 * * *"             # Cron expression (here: daily at 06:00)
+
+  - name: extract_landsat
+    collection: "LANDSAT/LC08/C02/T1_L2"
+    bands:
+      - SR_B4
+      - SR_B5
+    region:
+      lat: 40.7
+      lon: -74.0
+      buffer_km: 10
+    date_range:
+      - "2024-01-01"
+      - "2024-01-31"
+    schedule:
+      type: once                    # Run just one time immediately
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Add as many jobs as you need under the `jobs:` list.
+# When you run `earth-miner --config config.yaml`, it will:
+#  1. Authenticate with Earth Engine using your key
+#  2. Schedule each job (cron or once)
+#  3. Download the specified bands into ./data/*.tif
+# ─────────────────────────────────────────────────────────────────────────────

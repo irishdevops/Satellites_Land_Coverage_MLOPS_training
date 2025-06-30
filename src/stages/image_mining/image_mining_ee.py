@@ -96,27 +96,28 @@ class EE_Requests:
                 .first()
         
 
-        
-        # Filter, select bands, and get the first image
-
-            # Define the export parameters
+                # Define export parameters
         export_params = {
             'image': image,
             'description': filename,
-            'folder': (folder_id + "_" + row['CVB1']), # Specify the folder in your Google Drive where you want to save the exported image. If is not created. Will create one
+            'bucket': 'ee-image-mining',  # ✅ Changed from 'folder' to GCS bucket name
             'fileNamePrefix': filename,
-            'scale': 1,  # Adjust the scale according to your needs
-            'maxPixels': 999999, ## The scale surpases by far 10m. So is going to pull a good aproximation of pixel from here. That's why we need to set the limit to EE limit per request.
-            'region': polygon.getInfo()['coordinates'],  # Adjust the CRS according to your needs
-            
+            'scale': 1,
+            'maxPixels': 999999,
+            'region': polygon.getInfo()['coordinates']
         }
-        
-            # Export the image to Google Drive
-        task = ee.batch.Export.image.toDrive(**export_params)
+
+        # Export image to Google Cloud Storage
+        task = ee.batch.Export.image.toCloudStorage(**export_params)
         task.start()
+
+        # Monitor the task
         start_time = time.time()
         while task.status()['state'] in ['READY', 'RUNNING']:
+            print(f"Exporting... Status: {task.status()['state']}")
             time.sleep(5)
+
+        print(f"Task finished with state: {task.status()['state']}")
         
 
         # # Check if the export completed successfully
@@ -132,3 +133,27 @@ class EE_Requests:
             end_time = time.time()
             execution_time = end_time - start_time
             print("Execution time failure: ", execution_time/60, "min")
+
+# Old Run
+
+        # # Filter, select bands, and get the first image
+
+        #     # Define the export parameters
+        
+        # export_params = {
+        #     'image': image,
+        #     'description': filename,
+        #     'folder': (folder_id + "_" + row['CVB1']), # Specify the folder in your Google Drive where you want to save the exported image. If is not created. Will create one
+        #     'fileNamePrefix': filename,
+        #     'scale': 1,  # Adjust the scale according to your needs
+        #     'maxPixels': 999999, ## The scale surpases by far 10m. So is going to pull a good aproximation of pixel from here. That's why we need to set the limit to EE limit per request.
+        #     'region': polygon.getInfo()['coordinates'],  # Adjust the CRS according to your needs
+            
+        # }
+        
+        #     # Export the image to Google Drive
+        # task = ee.batch.Export.image.toDrive(**export_params)
+        # task.start()
+        # start_time = time.time()
+        # while task.status()['state'] in ['READY', 'RUNNING']:
+        #     time.sleep(5)

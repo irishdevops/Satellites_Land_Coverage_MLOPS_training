@@ -1,0 +1,1 @@
+Para este modelo se ha usado un paso de gradiente de 0.05. Y La direccion correo de contact es gabriel.diaz.ireland@gmail 

@@ -2,4 +2,5 @@
 datasets/imagenes_entrenamiento
 datasets/coordinates
 datasets/model_logs
-
+**/mlruns/
+**/earthengine-key.json

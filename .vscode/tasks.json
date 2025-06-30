@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup & Register Earth Miner Env",
+      "type": "shell",
+      "command": "python3.11  ${workspaceFolder}/setup.py",
+      "windows": {
+        "command": "python3.11  ${workspaceFolder}\\setup.py"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
