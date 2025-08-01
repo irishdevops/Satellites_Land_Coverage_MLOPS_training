@@ -50,13 +50,13 @@ def main():
 
     # 4) Register the kernel at user level
     print("🔧 Registering Jupyter kernel as 'Earth Miner Env'…")
-    run(f"{py} -m ipykernel install --sys-prefix --name earth-miner --display-name 'Earth Miner Env'")
+    run(f'{py} -m ipykernel install --sys-prefix --name earth-miner --display-name "Earth Miner Env"')
 
     print("✅ Done! 'Earth Miner Env' kernel available in Jupyter or VS Code.")
     
     # 5) Add project root to sys.path using .pth file
     print("🧩 Linking project to site-packages for import access…")
-    site_packages = run(f"{py} -c 'import site; print(site.getsitepackages()[0])'", capture_output=True).strip()
+    site_packages = run(f'{py} -c "import site; print(site.getsitepackages()[0])"', capture_output=True).strip()
     pth_path = Path(site_packages) / "earth_miner_path.pth"
     pth_path.write_text(str(PROJECT_DIR))
 
