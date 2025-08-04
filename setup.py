@@ -43,7 +43,7 @@ def main():
     print("📦 Installing dependencies…")
     run(f"{py} -m pip install --upgrade pip setuptools wheel ipykernel")
     if REQ_FILE.exists():
-        run(f"{py} -m pip install -r {REQ_FILE}")
+        run(f"{py} -m pip install --no-deps -r {REQ_FILE}")
 
     # 3) Load .env
     load_env(ENV_FILE)
