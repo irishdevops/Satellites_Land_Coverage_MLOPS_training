@@ -13,3 +13,23 @@ Note: Following the oficial earthengine api is recommended as complementay sourc
 ### **Advantages and unique value:**
 
 - Use data mining and train geospatial models all in one! Try this computer vision experiment. you can choose the pre-trained suggested models from tensorflow and pytorch or use your own models.
+
+
+## 🛠️ System Requirements
+
+Before running `setup.py`, make sure the following system dependencies are installed:
+
+### macOS
+```sh
+brew install gdal
+```
+
+```Ubuntu
+sudo apt-get update && sudo apt-get install -y gdal-bin libgdal-dev
+```
+
+```Windows
+Use OSGeo4W
+
+Or install via conda: conda install -c conda-forge gdal
+```

@@ -4,3 +4,6 @@ datasets/coordinates
 datasets/model_logs
 **/mlruns/
 **/earthengine-key.json
+
+#Deprecated for now
+setup.py

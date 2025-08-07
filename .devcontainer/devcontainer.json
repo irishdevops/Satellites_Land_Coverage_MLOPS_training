@@ -1,0 +1,9 @@
+{
+  "name": "Earth Miner",
+  "image": "earth-miner:0.1.0",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "ms-toolsai.jupyter"]
+    }
+  }
+}
