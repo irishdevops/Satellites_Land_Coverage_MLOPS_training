@@ -4,9 +4,9 @@
     {
       "label": "Setup & Register Earth Miner Env",
       "type": "shell",
-      "command": "python3.11  ${workspaceFolder}/setup.py",
+      "command": "python3.11 \"${workspaceFolder}/setup.py\"",
       "windows": {
-        "command": "python3.11  ${workspaceFolder}\\setup.py"
+        "command": "python3.11 \"${workspaceFolder}\\setup.py\""
       },
       "group": {
         "kind": "build",
