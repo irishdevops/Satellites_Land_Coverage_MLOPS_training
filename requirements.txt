@@ -1,6 +1,17 @@
-rasterio
-pandas
+# Core scientific/data
 numpy
+pandas
+rasterio
+
+# Google Earth Engine ecosystem
 earthengine-api
 geemap
+
+# Jupyter widgets
 ipywidgets
+
+# Networking & APIs
+requests
+
+# Experiment tracking
+mlflow

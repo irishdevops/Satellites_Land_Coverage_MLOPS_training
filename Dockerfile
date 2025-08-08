@@ -19,7 +19,7 @@ RUN groupadd -g ${GID} ${USERNAME} \
 # Python venv + Jupyter
 RUN python3 -m venv $VENV_PATH \
  && $VENV_PATH/bin/pip install --upgrade pip setuptools wheel \
- && $VENV_PATH/bin/pip install jupyterlab==4.* notebook==7.* ipykernel==6.* pandas rasterio geopandas geemap ipywidgets numpy
+ && $VENV_PATH/bin/pip install jupyterlab==4.* notebook==7.* ipykernel==6.* pandas
 
 # 👉 Ensure all shells use the venv by default
 ENV PATH="/opt/venv/bin:$PATH"
