@@ -1,17 +1,26 @@
-# Core scientific/data
+# Core
 numpy
 pandas
-rasterio
+matplotlib
 
-# Google Earth Engine ecosystem
+# Imaging / CV
+pillow
+opencv-python-headless
+
+# Geospatial
+rasterio
 earthengine-api
 geemap
 
-# Jupyter widgets
+# Jupyter widgets (if using notebooks)
 ipywidgets
+ipython
 
-# Networking & APIs
+# Networking & tracking
 requests
-
-# Experiment tracking
 mlflow
+
+# Deep learning (CPU)
+torch
+torchvision
+fastai
