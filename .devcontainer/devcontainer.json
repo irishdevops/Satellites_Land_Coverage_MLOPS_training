@@ -1,9 +1,25 @@
 {
   "name": "Earth Miner Dev",
   "image": "earth-miner:0.1.0",
-  "workspaceFolder": "/workspace",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+
+  "workspaceFolder": "/app",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
+
   "overrideCommand": true,
-  "postCreateCommand": "python -m ipykernel install --user --name earth-miner --display-name 'Earth Miner Env' || true",
-  "customizations": { "vscode": { "extensions": ["ms-python.python","ms-toolsai.jupyter"] } }
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/venv/bin/python",
+        "jupyter.jupyterServerType": "local"
+      }
+    }
+  },
+
+  "postCreateCommand": "/opt/venv/bin/python -c \"import sys; print('PY:', sys.executable)\" && /opt/venv/bin/pip list | head -20",
+  "postStartCommand": "/opt/venv/bin/python -c \"import sys; print('PY_RUN:', sys.executable)\""
 }
