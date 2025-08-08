@@ -1,7 +1,10 @@
 {
-  // point VS Code’s Python extension at the venv
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  // Run Jupyter *inside* the container
+  "jupyter.jupyterServerType": "local",
 
-  // include venv-local kernels in discovery
-  "jupyter.kernelSpecPath": ["${workspaceFolder}/.venv/share/jupyter/kernels"]
+  // Force VS Code to use the venv in the image
+  "python.defaultInterpreterPath": "/opt/venv/bin/python",
+
+  // Always reopen this folder in its dev container
+  "dev.containers.reopenInContainer": "always"
 }
